@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна - "Гаррі Поттер"</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #1a5d72;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f5f5f5;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .header {
+            position: relative;
+            background-image: url('images/header_img1.png');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 50px;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-text {
+            max-width: 60%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #d1b000;
+            color: #1c1c1c;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: #1c1c1c;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .text-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #111;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .text-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .heroes-section {
+            background-color: #1a5d72;
+            padding: 40px 50px;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-text {
+            max-width: 500px;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        .hero-text h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .hero img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #fff;
+            color: #1c1c1c;
+        }
+        .cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 1000px;
+    flex-wrap: wrap; /* Це дозволяє карткам переноситись на новий рядок, якщо місця не вистачає */
+    gap: 20px; /* Додає відступи між картками */
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.card {
+    background-color: #1a5d72;
+    color: #fff;
+    width: 22%; /* Зменшуємо ширину карток, щоб вони поміщались в одну лінію */
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #fff; 
+    animation: typing 3s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home" class="logo">Harry Potter</a>
+    <div>
+        <a href="index.html">Головна</a>
+        <a href="describe_the_plot.html">Опис сюжету</a>
+        <a href="interactive.html">Інтерактив</a>
+    </div>
+</nav>
+
+<div id="home" class="header">
+    <div class="header-text">
+        <h1 class="typing-text">"ГАРРІ ПОТТЕР"</h1>
+        <p>Відчуйте магію разом із Гаррі Поттером. Досліджуйте чарівний світ, який сповнений пригод, дружби та неймовірних відкриттів.</p>
+    </div>
+</div>
+<div class="cards">
+    <a href="index.html" class="card">
+        <h3>Головна</h3>
+        <p>Поверніться на головну сторінку сайту, щоб побачити більше цікавих деталей.</p>
+    </a>
+    <a href="describe_the_plot.html" class="card">
+        <h3>Опис сюжету</h3>
+        <p>Дізнайтеся більше про захоплюючий сюжет серії книг «Гаррі Поттер».</p>
+    </a>
+    <a href="interactive.html" class="card">
+        <h3>Інтерактив</h3>
+        <p>Загляньте в інтерактивний розділ та спробуйте магічні випробування!</p>
+    </a>
+</div>
+
+
+<div class="text-section">
+    <h2>Про Гаррі Поттера</h2>
+    <p>«Гаррі Поттер» (англ. Harry Potter) — серія з семи фантастичних романів англійської письменниці Джоан Роулінг. У книгах розповідається про пригоди юного чарівника Гаррі Поттера і його друзів Герміону Ґрейнджер і Рона Візлі, які навчаються у Гоґвортській школі чарів і чаклунства. Основний сюжет присвячений боротьбі Гаррі проти темного чаклуна лорда Волдеморта, який намірюється стати безсмертним, повалити чаклунський керівний орган званий Міністерством магії і підкорити всіх чарівників і маґлів (не чарівників). Дія книг відбувається у Вигаданому всесвіті Гаррі Поттера.</p>
+</div>
+
+<div class="heroes-section">
+    <div class="hero">
+        <div class="hero-text">
+            <h3>Гаррі Поттер</h3>
+            <p>Гаррі Поттер — головний герой серії. Він сирота, якому судилося стати найвідомішим чарівником, який пережив атаку темного чаклуна Волдеморта. Він вірний друг і мужній борець з темними силами.</p>
+        </div>
+        <img src="images/harry_potter.png" alt="Harry Potter">
+    </div>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h3>Герміона Ґрейнджер</h3>
+            <p>Герміона Ґрейнджер — одна з найкращих друзів Гаррі Поттера. Вона неймовірно розумна, рішуча і віддана другам. Її магічні знання допомагають у вирішенні багатьох складних ситуацій.</p>
+        </div>
+        <img src="images/hermione_granger.png" alt="Hermione Granger">
+    </div>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h3>Рональд Візлі</h3>
+            <p>Рональд Візлі — найкращий друг Гаррі Поттера. Хоч він не такий розумний як Герміона, але відданість і хоробрість роблять його важливим учасником пригод Гаррі.</p>
+        </div>
+        <img src="images/ron_weasley.png" alt="Ron Weasley">
+    </div>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h3>Лорд Волдеморт</h3>
+            <p>Лорд Волдеморт — головний антагоніст серії. Його справжнє ім'я — Том Реддл. Він прагне до безсмертя і підкорення світу, використовуючи темну магію.</p>
+        </div>
+        <img src="images/voldemort.png" alt="Lord Voldemort">
+    </div>
+</div>
+
+<button class="back-to-top" id="backToTopButton">&#8593;</button>
+
+<script>
+    const backToTopButton = document.getElementById('backToTopButton');
+
+    window.onscroll = () => {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.opacity = 1;
+            backToTopButton.style.visibility = 'visible';
+        } else {
+            backToTopButton.style.opacity = 0;
+            backToTopButton.style.visibility = 'hidden';
+        }
+    };
+
+    backToTopButton.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

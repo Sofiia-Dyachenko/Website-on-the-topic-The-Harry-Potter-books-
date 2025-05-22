@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактив - Тест на тему Гаррі Поттер</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+        }
+
+        nav {
+            background-color: #1A5D72;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f5f5f5;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .header {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #2d2d2d;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(0.98);
+            transition: transform 0.3s;
+        }
+
+        .quiz-container:hover {
+            transform: scale(1);
+        }
+
+        .quiz-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f1c232;
+        }
+
+        .quiz-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #dcdcdc;
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #1A5D72;
+            color: white;
+            border-radius: 10px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .quiz-option {
+            background-color: #444;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-option:hover {
+            background-color: #0a7e9d;
+            transform: translateY(-5px);
+        }
+
+        .quiz-option.correct {
+            background-color: #4caf50;
+            box-shadow: 0px 4px 6px rgba(0, 255, 0, 0.5);
+        }
+
+        .quiz-option.incorrect {
+            background-color: #f44336;
+            box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.5);
+        }
+
+        .results {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .results h3 {
+            font-size: 2rem;
+            color: #f1c232;
+        }
+
+        .results p {
+            font-size: 1.3rem;
+            color: #dcdcdc;
+        }
+
+        #next-btn {
+            padding: 10px 20px;
+            background-color: #12A1D3;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        #next-btn:hover {
+            background-color: #0a7e9d;
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #fff; 
+    animation: typing 3s steps(20) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home" class="logo">Harry Potter</a>
+    <div>
+        <a href="index.html">Головна</a>
+        <a href="describe_the_plot.html">Опис сюжету</a>
+        <a href="interactive.html">Інтерактив</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1 class="typing-text">Тест на тему Гаррі Поттер</h1>
+    <p>Перевір свої знання про чарівний світ Гаррі Поттера!</p>
+</div>
+
+<div class="quiz-container animated" id="quiz-container">
+    <h2>Тест: Перевір свої знання</h2>
+
+    <div class="quiz-question" id="question"></div>
+
+    <div class="quiz-options" id="options"></div>
+
+    <button id="next-btn" onclick="nextQuestion()" style="display: none;">Далі</button>
+</div>
+
+<!-- Результати тесту -->
+<div class="results" id="results" style="display:none;">
+    <h3>Твої результати:</h3>
+    <p id="score"></p>
+    <button onclick="restartQuiz()">Пройти знову</button>
+</div>
+
+<script>
+    const quizData = [
+        {
+            question: "Хто є автором серії книг про Гаррі Поттера?",
+            options: ["Джоан Роулінг", "Джордж Мартін", "Джон Толкін", "Рік Ріордан"],
+            answer: 0
+        },
+        {
+            question: "Яке прізвище у найкращого друга Гаррі Поттера?",
+            options: ["Візлі", "Грінґрас", "Малфой", "Фелпс"],
+            answer: 0
+        },
+        {
+            question: "Яке закляття використовував Гаррі Поттер для боротьби з Волдемортом у фіналі?",
+            options: ["Експелліармус", "Авада Кедавра", "Лумос", "Петрифікація"],
+            answer: 0
+        },
+        {
+            question: "Яка найсильніша магія у світі Гаррі Поттера?",
+            options: ["Відьомське зілля", "Герметична магія", "Закляття \"Авада Кедавра\"", "Любов"],
+            answer: 3
+        },
+        {
+            question: "Хто був головним антагоністом у першій книзі?",
+            options: ["Лорд Волдеморт", "Петунія Дерслі", "Квірінос Квірел", "Беллатриса Лестердж"],
+            answer: 2
+        },
+        {
+            question: "Яким магічним засобом користуються для подорожей через час?",
+            options: ["Маховий метелик", "Часова машина", "Трансфігурація", "Часоподорожник"],
+            answer: 3
+        },
+        {
+            question: "Яку магічну тварину тримала Герміона Ґрейнджер у своїй сумці?",
+            options: ["Баггс", "Гіпогриф", "Котик", "Телекинез"],
+            answer: 0
+        },
+        {
+            question: "Кому належала чарівна паличка, яка насправді була особливою?",
+            options: ["Гаррі Поттеру", "Лорду Волдеморту", "Дамблдору", "Герміоні Ґрейнджер"],
+            answer: 0
+        },
+        {
+            question: "Хто став директором школи після смерті Дамблдора?",
+            options: ["Северус Снейп", "Рубеус Гаґрід", "Минерва Макґонеґел", "Гаррі Поттер"],
+            answer: 0
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const question = quizData[currentQuestionIndex];
+        document.getElementById('question').innerText = question.question;
+        const optionsContainer = document.getElementById('options');
+        optionsContainer.innerHTML = '';
+
+        question.options.forEach((option, index) => {
+            const optionElement = document.createElement('div');
+            optionElement.classList.add('quiz-option');
+            optionElement.innerText = option;
+            optionElement.onclick = () => checkAnswer(index);
+            optionsContainer.appendChild(optionElement);
+        });
+    }
+
+    function checkAnswer(selectedIndex) {
+        const question = quizData[currentQuestionIndex];
+        const options = document.querySelectorAll('.quiz-option');
+        options.forEach((option, index) => {
+            if (index === question.answer) {
+                option.classList.add('correct');
+            } else if (index === selectedIndex) {
+                option.classList.add('incorrect');
+            }
+        });
+        score += (selectedIndex === question.answer) ? 1 : 0;
+        document.getElementById('next-btn').style.display = 'inline-block';
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) {
+            loadQuestion();
+            document.getElementById('next-btn').style.display = 'none';
+        } else {
+            showResults();
+        }
+    }
+
+    function showResults() {
+        const resultsContainer = document.getElementById('results');
+        const scoreText = document.getElementById('score');
+        scoreText.innerText = `Правильних відповідей: ${score} з ${quizData.length}`;
+        resultsContainer.style.display = 'block';
+    }
+
+    function restartQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        document.getElementById('results').style.display = 'none';
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>

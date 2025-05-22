@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опис сюжету</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #000000;
+            color: #f5f5f5;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f5f5f5;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+
+        .header {
+            position: relative;
+            background-image: url('images/light_header_img1.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 50px;
+        }
+
+        .header-text {
+            max-width: 50%;
+            padding: 20px;
+            color: black;
+            border-radius: 10px;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .carousel-content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .book {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .book h2 {
+            font-size: 2rem;
+            color: #F8C537;
+            margin-bottom: 10px;
+        }
+
+        .book p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ffffff; /* Основний текст білий */
+        }
+
+        .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: #12A1D3;
+}
+
+.carousel-buttons .carousel-button:last-child {
+    margin-right: 25px; 
+}
+.carousel-buttons .carousel-button:first-child {
+    margin-left: -15px; /
+}
+
+
+
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background: #555;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background: #12A1D3;
+        }
+        @keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #fff; 
+    animation: typing 3s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+.back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #fff;
+            color: #1c1c1c;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Harry Potter</a>
+    <div>
+        <a href="index.html">Головна</a>
+        <a href="describe_the_plot.html">Опис сюжету</a>
+        <a href="interactive.html">Інтерактив</a>
+    </div>
+</nav>
+
+<div class="header">
+    <div class="header-text">
+        <h1 class="typing-text">ОПИС СЮЖЕТУ</h1>
+        <p>Дізнайтесь більше про неймовірні пригоди, які відкриваються перед вами у світі магії Гаррі Поттера, сповненому чарів, небезпек та дружби.</p>
+    </div>
+</div>
+
+<div class="carousel">
+    <div class="carousel-content">
+        <div class="book">
+            <h2>Гаррі Поттер і філософський камінь</h2>
+            <p>Гаррі дізнається, що він чарівник, і вступає до Гоґвортсу. Там він знайомиться з Роном і Герміоною, разом вони відкривають таємниці чарівного світу та стикаються з Волдемортом, який намагається здобути філософський камінь і стати безсмертним.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і Таємна кімната</h2>
+            <p>У Гоґвортсі відкривається Таємна кімната, а учні починають кам’яніти через атаки базиліска. Гаррі дізнається про свої зв’язки зі зміями, рятує Джіні Візлі та зупиняє стародавнє зло, що загрожувало школі.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і в'язень Азкабану</h2>
+            <p>Гаррі дізнається про Сіріуса Блека, який вважається зрадником, і відкриває, що Сіріус невинний. Разом із друзями він розкриває справжнього винуватця, що призвело до трагічної загибелі його батьків.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і Келих вогню</h2>
+            <p>Гаррі несподівано бере участь у Тричаклунському турнірі. Турнір стає пасткою, організованою Волдемортом для його відродження. Гаррі стикається з важкими випробуваннями і стає свідком темного ритуалу.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і Орден Фенікса</h2>
+            <p>Гаррі організовує групу студентів, відому як Віддана Армія, щоб боротися з Волдемортом. Він стикається з несправедливістю Міністерства магії та переживає втрату Сіріуса Блека, свого хрещеного батька.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і Напівкровний Принц</h2>
+            <p>Гаррі розкриває таємниці горокраксів Волдеморта, досліджуючи його минуле. Разом із Дамблдором він шукає способи знищити горокракси, але втрачає Дамблдора у трагічному повороті подій.</p>
+        </div>
+        <div class="book">
+            <h2>Гаррі Поттер і Смертельні реліквії</h2>
+            <p>Гаррі, Рон і Герміона вирушають на небезпечний пошук горокраксів, що веде до фінальної битви в Гоґвортсі. У кульмінації Гаррі перемагає Волдеморта, знищуючи його владу назавжди.</p>
+        </div>
+    </div>
+    <div class="carousel-buttons">
+        <button class="carousel-button" onclick="prevSlide()">&#8592;</button>
+        <button class="carousel-button" onclick="nextSlide()">&#8594;</button>
+    </div>
+    <div class="carousel-indicators">
+        <span class="indicator" onclick="goToSlide(0)"></span>
+        <span class="indicator" onclick="goToSlide(1)"></span>
+        <span class="indicator" onclick="goToSlide(2)"></span>
+        <span class="indicator" onclick="goToSlide(3)"></span>
+        <span class="indicator" onclick="goToSlide(4)"></span>
+        <span class="indicator" onclick="goToSlide(5)"></span>
+        <span class="indicator" onclick="goToSlide(6)"></span>
+    </div>
+</div>
+
+<script>
+    const carouselContent = document.querySelector('.carousel-content');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselContent.style.transform = `translateX(${offset}%)`;
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % carouselContent.children.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + carouselContent.children.length) % carouselContent.children.length;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    updateCarousel();
+</script>
+<!-- Розділ з відео-каруселлю -->
+<section id="video-carousel" style="text-align: center; margin: 3em 0;">
+    <h2 style="color: #f9a826;">Огляди книг Гаррі Поттера</h2>
+    <div class="carousel-container" style="position: relative; max-width: 600px; margin: auto;">
+        <button class="carousel-btn prev" onclick="prevVideo()">&#10094;</button>
+        <div id="video-wrapper" style="overflow: hidden;">
+            <div class="videos" style="display: flex; transition: transform 0.5s ease;">
+                <!-- Відео 1 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Bs1pKSFwoCQ?si=6rzrnkNgTaHfAc27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- Відео 2 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/L-Emdyh4yWo?si=v_CadpbP3bmGFNhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- Відео 3 -->
+                <div style="min-width: 100%;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-HaUYq9wfjw?si=UhKSodvbstZ2-Vyv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="nextVideo()">&#10095;</button>
+    </div>
+</section>
+<style>
+    .carousel-container {
+        position: relative;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #415a77;
+        border: none;
+        color: #ffffff;
+        padding: 0.5em;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .carousel-btn.prev {
+        left: 0;
+    }
+    .carousel-btn.next {
+        right: 0;
+    }
+    .carousel-btn:hover {
+        background-color: #f9a826;
+    }
+    .videos {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentIndex = 0;
+        const videos = document.querySelector('.videos');
+        const totalVideos = videos.children.length;
+
+        function showVideo(index) {
+            // Додатковий захист від виходу за межі
+            if (index < 0) index = totalVideos - 1;
+            if (index >= totalVideos) index = 0;
+            currentIndex = index;
+            videos.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + totalVideos) % totalVideos;
+            showVideo(currentIndex);
+        }
+
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % totalVideos;
+            showVideo(currentIndex);
+        }
+
+        // Ініціалізація каруселі
+        document.querySelector('.prev').addEventListener('click', prevVideo);
+        document.querySelector('.next').addEventListener('click', nextVideo);
+    });
+</script>
+<button class="back-to-top" id="backToTopButton">&#8593;</button>
+
+<script>
+    const backToTopButton = document.getElementById('backToTopButton');
+
+    window.onscroll = () => {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.opacity = 1;
+            backToTopButton.style.visibility = 'visible';
+        } else {
+            backToTopButton.style.opacity = 0;
+            backToTopButton.style.visibility = 'hidden';
+        }
+    };
+
+    backToTopButton.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+
+
+
+</body>
+</html>
+
+
